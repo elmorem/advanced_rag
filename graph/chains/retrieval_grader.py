@@ -1,8 +1,11 @@
+from dotenv import load_dotenv
 from langchain_core.prompts import ChatPromptTemplate
 from pydantic import BaseModel, Field
 from langchain_openai import ChatOpenAI
 
-llm = ChatOpenAI(temperature=8)
+load_dotenv(override=True)
+
+llm = ChatOpenAI(temperature=.8)
 
 class GradeDocuments(BaseModel):
     """ 
